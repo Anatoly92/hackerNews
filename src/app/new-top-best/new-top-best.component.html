@@ -1,3 +1,16 @@
-<p>
-  {{bestNumber}}
-</p>
+<div infinite-scroll
+[infiniteScrollDistance]="scrollDistance"
+[infiniteScrollUpDistance]="scrollUpDistance"
+[infiniteScrollThrottle]="throttle"
+(scrolled)="onScrollDown()"
+(scrolledUp)="onUp()"
+style="height:1000">
+  <ul>
+    <li *ngFor="let story of currentStorys">
+      {{story.title}}
+    </li>
+  </ul>
+</div>
+
+<!-- <p >{{bestNumber}}</p> -->
+ 
